@@ -31,8 +31,41 @@
           <p>Load different images based on your window settings.</p>
 
 <h2>
-<a name="demos" class="anchor" href="#demos"><span class="octicon octicon-link"></span></a>Demos
-</h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting started</h2>
+
+<ul>
+<li>Use <code>bower</code> to install <code>angular-responsive-img</code>.</li>
+</ul><pre><code>bower install angular-responsive-img
+</code></pre>
+
+<ul>
+<li>Include <code>responsive-img.js</code> or <code>responsive-img.min.js</code> between your JS files.</li>
+</ul><div class="highlight highlight-html"><pre>// index.html
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"responsive-img.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<ul>
+<li>Include <code>brc.angular-responsive-img</code> as a module in your project (usually in <code>app.js</code>).</li>
+</ul><div class="highlight highlight-javascript"><pre><span class="c1">// app.js</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myApp'</span><span class="p">,</span> <span class="p">[</span>
+  <span class="c1">// ...</span>
+  <span class="s1">'brc.angular-simple-table'</span>
+  <span class="c1">// ...</span>
+<span class="p">]);</span>
+</pre></div>
+
+<ul>
+<li>Start using it everywhere!</li>
+</ul><div class="highlight highlight-html"><pre>// anywhere.html
+<span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 400"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/400/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 800"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/800/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/1000/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</pre></div>
+
+<h2>
+<a name="demos" class="anchor" href="#demos"><span class="octicon octicon-link"></span></a>Demos</h2>
 
 <h3>
 <a name="based-on-windows-width" class="anchor" href="#based-on-windows-width"><span class="octicon octicon-link"></span></a>Based on window's <strong>width</strong>
