@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html ng-app="brc.angular-responsive-img">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Angular-responsive-img by sheniff</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Angular-responsive-img</h1>
+        <h2>Angular directive to easily place responsive &lt;img&gt;&#39;s using &lt;picture&gt; element</h2>
+        <a href="https://github.com/sheniff/angular-responsive-img" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <p>Load different images based on your window settings.</p>
+
+<h2>
+<a name="based-on-windows-width" class="anchor" href="#based-on-windows-width"><span class="octicon octicon-link"></span></a>Based on window's <strong>width</strong>
+</h2>
+
+<p>Try resizing your window under 800px width and then under 400px width.</p>
+
+<picture width="200" height="200">
+  <source size="max-width: 400" src="http://fakeimg.pl/400/">
+  <source size="max-width: 800" src="http://fakeimg.pl/800/">
+  <source src="http://fakeimg.pl/1000/">
+</picture>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 400"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/400/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 800"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/800/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/1000/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</pre></div>
+
+<h2>
+<a name="based-on-windows-height" class="anchor" href="#based-on-windows-height"><span class="octicon octicon-link"></span></a>Based on window's <strong>height</strong>
+</h2>
+
+<p>Try resizing your window under 400px height and then under 200px height.</p>
+
+<picture width="200" height="200">
+  <source size="max-height: 200" src="http://fakeimg.pl/200/">
+  <source size="max-height: 400" src="http://fakeimg.pl/400/">
+  <source src="http://fakeimg.pl/800/">
+</picture>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-height: 200"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/200/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-height: 400"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/400/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/800/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</pre></div>
+
+<h2>
+<a name="based-on-windows-pixel-density" class="anchor" href="#based-on-windows-pixel-density"><span class="octicon octicon-link"></span></a>Based on window's <strong>pixel density</strong>
+</h2>
+
+<p>Try using a retina display to see an image twice the size (900px instead of 450px).
+Note: Some browsers allow you to see double dpi when you zoom in enough.</p>
+
+<picture width="200" height="200">
+  <source dpi="2" src="http://fakeimg.pl/900/">
+  <source src="http://fakeimg.pl/450/">
+</picture>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">dpi=</span><span class="s">"2"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/450/"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</pre></div>
+
+<h2>
+<a name="mix-them-up-at-will" class="anchor" href="#mix-them-up-at-will"><span class="octicon octicon-link"></span></a>Mix them up at will!</h2>
+
+<p>You can add as much sources as you want. Please note that in case of conflict, the last one declared will show.</p>
+
+<picture width="200" height="200">
+  <source dpi="2" src="http://fakeimg.pl/900/">
+  <source size="max-width: 400, max-height: 200" src="http://fakeimg.pl/400x200">
+  <source size="max-width: 800, max-height: 400" src="http://fakeimg.pl/800x400">
+  <source src="http://fakeimg.pl/1000x800">
+</picture>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">dpi=</span><span class="s">"2"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900/"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 400, max-height: 200"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/400x200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 800, max-height: 400"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/800x400"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/1000x800"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</pre></div>
+
+<h2>
+<a name="use-it-for-all-your-images" class="anchor" href="#use-it-for-all-your-images"><span class="octicon octicon-link"></span></a>Use it for all your images!</h2>
+
+<p>Multiple images with different sizes can be set in case you need them.</p>
+
+<picture width="200" height="200">
+  <source size="max-width: 1000" src="http://fakeimg.pl/800">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 950" src="http://fakeimg.pl/750">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 900" src="http://fakeimg.pl/700">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 850" src="http://fakeimg.pl/650">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 800" src="http://fakeimg.pl/600">
+  <source src="http://fakeimg.pl/900">
+</picture>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 1000"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/800"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+<span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 950"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/750"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+<span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 900"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/700"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+<span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 850"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/650"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+<span class="nt">&lt;picture</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"200"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">size=</span><span class="s">"max-width: 800"</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/600"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">"http://fakeimg.pl/900"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</pre></div>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/sheniff/angular-responsive-img/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/sheniff/angular-responsive-img/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/sheniff/angular-responsive-img"></a> is maintained by <a href="https://github.com/sheniff">sheniff</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular.js"></script>
+    <script type="text/javascript" src="responsive-img.js"></script>
+
+  </body>
+</html>
