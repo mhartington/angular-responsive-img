@@ -1,51 +1,72 @@
-# Angular directive to easily place responsive &lt;img&gt;'s using &lt;picture&gt; element
+Load different images based on your window settings.
 
-[TODO - brief summary]
+## Based on window's <strong>width</strong>
+Try resizing your window under 800px width and then under 400px width.
 
-## Demo
-http://sheniff.github.io/angular-responsive-img/
+```html
+<picture width="200" height="200">
+  <source size="max-width: 400" src="http://fakeimg.pl/400/">
+  <source size="max-width: 800" src="http://fakeimg.pl/800/">
+  <source src="http://fakeimg.pl/1000/">
+</picture>
+```
 
-## Dependencies
-- required:
-	[TODO]
-- optional
-	[TODO]
+## Based on window's <strong>height</strong>
+Try resizing your window under 400px height and then under 200px height.
 
-See `bower.json` and `index.html` in the `gh-pages` branch for a full list / more details
+```html
+<picture width="200" height="200">
+  <source size="max-height: 200" src="http://fakeimg.pl/200/">
+  <source size="max-height: 400" src="http://fakeimg.pl/400/">
+  <source src="http://fakeimg.pl/800/">
+</picture>
+```
 
-## Install
-1. download the files
-	1. Bower
-		1. add `"angular-responsive-img": "latest"` to your `bower.json` file then run `bower install` OR run `bower install angular-responsive-img`
-2. include the files in your app
-	1. `responsive-img.min.js`
-	2. `responsive-img.less` OR `responsive-img.min.css` OR `responsive-img.css`
-3. include the module in angular (i.e. in `app.js`) - `sheniff.angular-responsive-img`
+## Based on window's <strong>pixel density</strong>
+Try using a retina display to see an image twice the size (900px instead of 450px).
+Note: Some browsers allow you to see double dpi when you zoom in enough.
 
-See the `gh-pages` branch, files `bower.json` and `index.html` for a full example.
+```html
+<picture width="200" height="200">
+  <source dpi="2" src="http://fakeimg.pl/900/">
+  <source src="http://fakeimg.pl/450/">
+</picture>
+```
 
+## Mix them up at will!
+You can add as much sources as you want. Please note that in case of conflict, the last one declared will show.
 
-## Documentation
-See the `responsive-img.js` file top comments for usage examples and documentation
-https://github.com/sheniff/angular-responsive-img/blob/master/responsive-img.js
+```html
+<picture width="200" height="200">
+  <source dpi="2" src="http://fakeimg.pl/900/">
+  <source size="max-width: 400, max-height: 200" src="http://fakeimg.pl/400x200">
+  <source size="max-width: 800, max-height: 400" src="http://fakeimg.pl/800x400">
+  <source src="http://fakeimg.pl/1000x800">
+</picture>
+```
 
+## Use it for all your images!
+Multiple images with different sizes can be set in case you need them.
 
-## Development
-
-1. `git checkout gh-pages`
-	1. run `npm install && bower install`
-	2. write your code then run `grunt`
-	3. git commit your changes
-2. copy over core files (.js and .css/.less for directives) to master branch
-	1. `git checkout master`
-	2. `git checkout gh-pages responsive-img.js responsive-img.min.js responsive-img.less responsive-img.css responsive-img.min.css`
-3. update README, CHANGELOG, bower.json, and do any other final polishing to prepare for publishing
-	1. git commit changes
-	2. git tag with the version number, i.e. `git tag v1.0.0`
-4. create github repo and push
-	1. [if remote does not already exist or is incorrect] `git remote add origin [github url]`
-	2. `git push origin master --tags` (want to push master branch first so it is the default on github)
-	3. `git checkout gh-pages`
-	4. `git push origin gh-pages`
-5. (optional) register bower component
-	1. `bower register angular-responsive-img [git repo url]`
+```html
+<picture width="200" height="200">
+  <source size="max-width: 1000" src="http://fakeimg.pl/800">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 950" src="http://fakeimg.pl/750">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 900" src="http://fakeimg.pl/700">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 850" src="http://fakeimg.pl/650">
+  <source src="http://fakeimg.pl/900">
+</picture>
+<picture width="200" height="200">
+  <source size="max-width: 800" src="http://fakeimg.pl/600">
+  <source src="http://fakeimg.pl/900">
+</picture>
+```
