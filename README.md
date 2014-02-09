@@ -1,6 +1,36 @@
 Load different images based on your window settings.
 
-## Based on window's <strong>width</strong>
+## Getting started
+
+1. Use `bower` to install `angular-responsive-img`.
+2. Include `responsive-img.js` or `responsive-img.min.js` between your JS files.
+3. Include `brc.angular-responsive-img` as a module in your project (usually in `app.js`).
+4. Start using it everywhere!
+
+```
+bower install angular-responsive-img
+
+// index.html
+<script type="text/javascript" src="responsive-img.js"></script>
+
+// app.js
+angular.module('myApp', [
+  // ...
+  'brc.angular-simple-table'
+  // ...
+]);
+
+// anywhere.html
+<picture width="200" height="200">
+  <source size="max-width: 400" src="http://fakeimg.pl/400/">
+  <source size="max-width: 800" src="http://fakeimg.pl/800/">
+  <source src="http://fakeimg.pl/1000/">
+</picture>
+```
+
+## Demos
+
+### Based on window's <strong>width</strong>
 
 ```html
 <picture width="200" height="200">
@@ -10,7 +40,7 @@ Load different images based on your window settings.
 </picture>
 ```
 
-## Based on window's <strong>height</strong>
+### Based on window's <strong>height</strong>
 
 ```html
 <picture width="200" height="200">
@@ -20,7 +50,7 @@ Load different images based on your window settings.
 </picture>
 ```
 
-## Based on window's <strong>pixel density</strong>
+### Based on window's <strong>pixel density</strong>
 
 ```html
 <picture width="200" height="200">
@@ -29,7 +59,7 @@ Load different images based on your window settings.
 </picture>
 ```
 
-## Mix them up at will!
+### Mix them up at will!
 
 ```html
 <picture width="200" height="200">
@@ -40,7 +70,7 @@ Load different images based on your window settings.
 </picture>
 ```
 
-## Use it for all your images!
+### Use it for all your images!
 
 ```html
 <picture width="200" height="200">
