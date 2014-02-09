@@ -1,17 +1,11 @@
 {
-	"name": "angular-responsive-img",
-	"version": "1.0.0",
+	"name": "angular-responsive-img-demo",
+	"version": "0.0.0",
 	"authors": [
 		"sheniff@gmail.com"
 	],
-	"description": "Angular directive to easily place responsive &lt;img&gt;'s using &lt;picture&gt; element",
+	"description": "Demo",
 	"keywords": [
-		"angular",
-		"AngularJS",
-		"img",
-		"responsive",
-		"angular-responsive-img",
-		"directive"
 	],
 	"license": "MIT",
 	"ignore": [
@@ -25,7 +19,8 @@
 		"angular":"~1.2.0",
 		"angular-animate":"~1.2.0",
 		"angular-sanitize":"~1.2.0",
-		"angular-touch":"~1.2.0"
+		"angular-touch":"~1.2.0",
+		"angular-route":"~1.2.0"
 	},
 	"devDependencies": {
 	}
