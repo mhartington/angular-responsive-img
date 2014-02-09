@@ -2,24 +2,33 @@ Load different images based on your window settings.
 
 ## Getting started
 
-1. Use `bower` to install `angular-responsive-img`.
-2. Include `responsive-img.js` or `responsive-img.min.js` between your JS files.
-3. Include `brc.angular-responsive-img` as a module in your project (usually in `app.js`).
-4. Start using it everywhere!
+* Use `bower` to install `angular-responsive-img`.
 
 ```
 bower install angular-responsive-img
+```
 
+* Include `responsive-img.js` or `responsive-img.min.js` between your JS files.
+
+```html
 // index.html
 <script type="text/javascript" src="responsive-img.js"></script>
+```
 
+* Include `brc.angular-responsive-img` as a module in your project (usually in `app.js`).
+
+```javascript
 // app.js
 angular.module('myApp', [
   // ...
   'brc.angular-simple-table'
   // ...
 ]);
+```
 
+* Start using it everywhere!
+
+```html
 // anywhere.html
 <picture width="200" height="200">
   <source size="max-width: 400" src="http://fakeimg.pl/400/">
