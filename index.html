@@ -1,27 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html ng-app="brc.angular-responsive-img">
 <head>
-    <meta charset="utf-8">
-
-    <title>angular-responsive-img</title>
-
+  <meta charset="utf-8">
+  <title>angular-responsive-img</title>
 	<link rel="stylesheet" href="main.css"/>
-
 </head>
 <body>
-	<div ng-view></div>
+  <h1>Angular Picture Directive</h1>
+  <p>Load different images based on your window settings.</p>
 
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-touch/angular-touch.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
-	
-	<script type="text/javascript" src="responsive-img.js"></script>
-	<!--<script type="text/javascript" src="responsive-img.min.js"></script>-->
-	
-	<script type="text/javascript" src="app.js"></script>
-	
-	<script type="text/javascript" src="pages/home/HomeCtrl.js"></script>
+  <section>
+    <h2>Based on window's <strong>width</strong></h2>
+    <p>Try resizing your window under 800px width and then under 400px width.</p>
+
+    <picture width="200" height="200">
+      <source size="max-width: 400" src="http://fakeimg.pl/400/">
+      <source size="max-width: 800" src="http://fakeimg.pl/800/">
+      <source src="http://fakeimg.pl/1000/">
+    </picture>
+
+    <pre>
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-width: 400" src="http://fakeimg.pl/400/"&gt;
+        &lt;source size="max-width: 800" src="http://fakeimg.pl/800/"&gt;
+        &lt;source src="http://fakeimg.pl/1000/"&gt;
+      &lt;/picture&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Based on window's <strong>height</strong></h2>
+    <p>Try resizing your window under 400px height and then under 200px height.</p>
+
+    <picture width="200" height="200">
+      <source size="max-height: 200" src="http://fakeimg.pl/200/">
+      <source size="max-height: 400" src="http://fakeimg.pl/400/">
+      <source src="http://fakeimg.pl/800/">
+    </picture>
+
+    <pre>
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-height: 200" src="http://fakeimg.pl/200/"&gt;
+        &lt;source size="max-height: 400" src="http://fakeimg.pl/400/"&gt;
+        &lt;source src="http://fakeimg.pl/800/"&gt;
+      &lt;/picture&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Based on window's <strong>pixel density</strong></h2>
+    <p>Try using a retina display to see an image twice the size (900px instead of 450px).</p>
+    <p>Note: Some browsers allow you to see double dpi when you zoom in enough.</p>
+
+    <picture width="200" height="200">
+      <source dpi="2" src="http://fakeimg.pl/900/">
+      <source src="http://fakeimg.pl/450/">
+    </picture>
+
+    <pre>
+      &lt;picture width="200" height="200"&gt;
+        &lt;source dpi="2" src="http://fakeimg.pl/900/"&gt;
+        &lt;source src="http://fakeimg.pl/450/"&gt;
+      &lt;/picture&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Mix them up at will!</h2>
+    <p>You can add as much sources as you want. Please note that in case of conflict, the last one declared will show.</p>
+
+    <picture width="200" height="200">
+      <source dpi="2" src="http://fakeimg.pl/900/">
+      <source size="max-width: 400, max-height: 200" src="http://fakeimg.pl/400x200">
+      <source size="max-width: 800, max-height: 400" src="http://fakeimg.pl/800x400">
+      <source src="http://fakeimg.pl/1000x800">
+    </picture>
+
+    <pre>
+      &lt;picture width="200" height="200"&gt;
+        &lt;source dpi="2" src="http://fakeimg.pl/900/"&gt;
+        &lt;source src="http://fakeimg.pl/450/"&gt;
+      &lt;/picture&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Use it for all your images!</h2>
+    <p>Multiple images with different sizes can be set in case you need them.</p>
+
+    <picture width="200" height="200">
+      <source size="max-width: 1000" src="http://fakeimg.pl/800">
+      <source src="http://fakeimg.pl/900">
+    </picture>
+    <picture width="200" height="200">
+      <source size="max-width: 950" src="http://fakeimg.pl/750">
+      <source src="http://fakeimg.pl/900">
+    </picture>
+    <picture width="200" height="200">
+      <source size="max-width: 900" src="http://fakeimg.pl/700">
+      <source src="http://fakeimg.pl/900">
+    </picture>
+    <picture width="200" height="200">
+      <source size="max-width: 850" src="http://fakeimg.pl/650">
+      <source src="http://fakeimg.pl/900">
+    </picture>
+    <picture width="200" height="200">
+      <source size="max-width: 800" src="http://fakeimg.pl/600">
+      <source src="http://fakeimg.pl/900">
+    </picture>
+
+    <pre>
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-width: 1000" src="http://fakeimg.pl/800"&gt;
+        &lt;source src="http://fakeimg.pl/900"&gt;
+      &lt;/picture&gt;
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-width: 950" src="http://fakeimg.pl/750"&gt;
+        &lt;source src="http://fakeimg.pl/900"&gt;
+      &lt;/picture&gt;
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-width: 900" src="http://fakeimg.pl/700"&gt;
+        &lt;source src="http://fakeimg.pl/900"&gt;
+      &lt;/picture&gt;
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-width: 850" src="http://fakeimg.pl/650"&gt;
+        &lt;source src="http://fakeimg.pl/900"&gt;
+      &lt;/picture&gt;
+      &lt;picture width="200" height="200"&gt;
+        &lt;source size="max-width: 800" src="http://fakeimg.pl/600"&gt;
+        &lt;source src="http://fakeimg.pl/900"&gt;
+      &lt;/picture&gt;
+    </pre>
+  </section>
+
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular.js"></script>
+  <script type="text/javascript" src="responsive-img.js"></script>
+
 </body>
 </html>
