@@ -1,22 +1,30 @@
 {
-	"name": "angular-responsive-img",
-	"version": "1.0.0",
-	"authors": [
-		"sheniff@gmail.com"
-	],
-	"description": "Angular directive to easily place responsive &lt;img&gt;'s using &lt;picture&gt; element",
-	"keywords": [
-	],
-	"license": "MIT",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-	},
-	"devDependencies": {
-	}
+  "name": "angular-responsive-img",
+  "version": "1.0.0",
+  "authors": [
+    "sheniff@gmail.com"
+  ],
+  "description": "Angular directive to easily place responsive &lt;img&gt;'s using &lt;picture&gt; element",
+  "keywords": [
+    "responsive",
+    "angular",
+    "AngularJS",
+    "img",
+    "angular-responsive-img"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".bower.json",
+    "CHANGELOG.md",
+    "Gruntfile.js",
+    "LICENSE",
+    "bower.json",
+    "images",
+    "index.html",
+    "package.json",
+    "server.js",
+    "stylesheets"
+  ],
+  "homepage": "https://github.com/sheniff/angular-responsive-img",
+  "main": "responsive-img.js"
 }
