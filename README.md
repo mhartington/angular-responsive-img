@@ -21,7 +21,7 @@ bower install angular-responsive-img
 // app.js
 angular.module('myApp', [
   // ...
-  'brc.angular-simple-table'
+  'brc.angular-responsive-img'
   // ...
 ]);
 ```
