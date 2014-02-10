@@ -1,14 +1,16 @@
 Version numbers correspond to `bower.json` version
 
-# 1.0.1
+# 1.0.2
 
-## Features
+## Random
+
+* Propietary changed to brochachos team
+
+# 1.0.1
 
 ## Bug Fixes
 
 * Updated bower.json to ignore a lot of useless files
-
-## Breaking Changes
 
 # 1.0.0
 
