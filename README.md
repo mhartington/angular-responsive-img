@@ -103,3 +103,7 @@ angular.module('myApp', [
   <source src="http://fakeimg.pl/900">
 </picture>
 ```
+
+## Inspiration
+
+Inspired by Tomomi Imura:[@girliemac](https://github.com/girliemac) and her talk about [responsive development](https://speakerdeck.com/girlie_mac/sf-html5-updated-responsive-cross-device-development-with-web-standards)
