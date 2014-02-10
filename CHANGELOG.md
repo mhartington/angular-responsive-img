@@ -4,6 +4,10 @@ Version numbers correspond to `bower.json` version
 
 ## Features
 
+* Initial version
+* Accepts max/min-width, max/min-height and dpi as source options
+* Basic documentation and demo
+
 ## Bug Fixes
 
 ## Breaking Changes
